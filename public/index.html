@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container" style="margin-top: 20px;"> <!--그리드 시스템의 시작은 위로부터 20px 띄고-->
+          <div class="row">
+              <div class="col-md-8 col-xs-6">
+                  <div class="well" id="book">치킨</div> <!--해당 개체에 클래스와 아이디를 적용-->
+              </div>
+              <div class="col-md-4 col-xs-6">
+                  <div class="well">감자튀김</div> <!--클래스 well은 부트스트랩 요소, 수정금지-->
+              </div>
+          </div>
+          <div class="row">
+              
+              <div class="col-md-4 col-xs-6 col-md-offset-8 "> <!--일반매체에서만 8번째 그리드부터 오프셋-->
+                  <div class="well" id="clickme" style="cursor:pointer">팥빙수</div>
+                  <!--well 클래스가 적용된 개체를 클릭 할 때, clickme id를 수행, 개체 위에 커서를 놓을 때 포인터 변경-->
+              </div>
+              <div class="col-md-4 col-xs-6 col-md-offset-8 ">
+                  <div class="well" id="ressurect" style="cursor:pointer">무절임</div>
+                  <!--well 클래스가 적용된 개체를 클릭 할 때, ressurect id를 수행, 개체 위에 커서를 놓을 때 포인터 변경-->
+              </div>
+           </div>
+        </div>
+        
+        <script>
+        <!--  스크립트의 내용은 clickme/ressurect id의 정의이며, 대상 적용개체는 book id가 적용된 개체-->
+            $( "#clickme" ).click(function() {
+                $( "#book" ).fadeOut( "slow", function() {
+                // Animation complete.
+                });
+            });
+            $( "#ressurect" ).click(function() {
+                $( "#book" ).fadeIn( "slow", function() {
+                // Animation complete
+                });
+            });
+        </script>
+    </body>
+</html>
